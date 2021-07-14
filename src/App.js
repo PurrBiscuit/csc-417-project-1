@@ -8,8 +8,15 @@ const App = () => {
     setShowAllCourses(!showAllCourses)
 
   return <div>
-    <input type="checkbox" id="toggle" name="toggle-courses" onChange={handleOnChange}/>
-    <label for="toogle">Only show courses took already</label>
+    <div className="bg-primary text-center p-3">
+      <input
+        type="checkbox"
+        id="toggle"
+        name="toggle-courses"
+        onChange={handleOnChange}
+      />
+      <label for="toogle" className="text-white">Only show courses took already</label>
+    </div>
 
     {courses.filter(course => showAllCourses || course.took)
       .map(course => {
