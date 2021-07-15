@@ -7,7 +7,7 @@ const App = () => {
   const handleOnChange = () =>
     setShowAllCourses(!showAllCourses)
 
-  return <div>
+  return <div className="container mt-4">
     <div className="bg-primary text-center p-3">
       <input
         type="checkbox"
@@ -18,12 +18,14 @@ const App = () => {
       <label for="toogle" className="text-white">Only show courses took already</label>
     </div>
 
-    {courses.filter(course => showAllCourses || course.took)
-      .map(course => {
-      const classes = course.took ? 'text-dark' : 'text-danger'
+    <div className="mt-4 text-center">
+      {courses.filter(course => showAllCourses || course.took)
+        .map(course => {
+        const color = course.took ? 'text-dark' : 'text-danger'
 
-      return <h1 key={course.number} className={classes}>Category: {course.category},  Number: {course.number},  Description: {course.description},  Took: {course.took.toString()}</h1>
-    })}
+        return <h2 key={course.number} className={color}>Category: {course.category},  Number: {course.number},  Description: {course.description},  Took: {course.took.toString()}</h2>
+      })}
+    </div>
   </div>
 }
 
