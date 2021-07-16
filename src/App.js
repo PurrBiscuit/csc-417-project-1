@@ -16,7 +16,7 @@ const App = () => {
         name="toggle-courses"
         onChange={handleOnChange}
       />
-      <label class="form-check-label" for="toogle">Only show courses took already</label>
+      <label class="form-check-label ms-1" for="toogle">Only show courses took already</label>
     </div>
 
     <div className="mt-4 text-center">
